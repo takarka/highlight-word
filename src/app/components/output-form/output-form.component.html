@@ -1,0 +1,10 @@
+<label for="result">Результат:</label>
+<h1 *ngIf="result">
+  <span *ngIf="result.before">{{ result.before }}</span>
+  <span
+    *ngIf="result.highlight"
+    [ngStyle]="{ color: result.color ? result.color : 'black' }"
+    >{{ result.highlight }}</span
+  >
+  <span *ngIf="result.after">{{ result.after }}</span>
+</h1>
