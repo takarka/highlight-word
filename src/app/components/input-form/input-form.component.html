@@ -1,0 +1,42 @@
+<div class="form-wrapper" *ngIf="sentence">
+  <form>
+    <label for="sentence">Текст сообщения:</label>
+    <textarea
+      id="sentence"
+      name="sentence"
+      placeholder="Текст.."
+      [(ngModel)]="sentence.text"
+      (ngModelChange)="sentenceChanged()"
+    ></textarea>
+
+    <label for="startIndex">Индекс начала подсветки:</label>
+    <input
+      type="number"
+      id="startIndex"
+      name="startIndex"
+      [(ngModel)]="sentence.startIndex"
+      (ngModelChange)="sentenceChanged()"
+    />
+
+    <label for="endIndex">Индекс конца подсветки:</label>
+    <input
+      type="number"
+      id="endIndex"
+      name="endIndex"
+      [(ngModel)]="sentence.endIndex"
+      (ngModelChange)="sentenceChanged()"
+    />
+
+    <label for="color">Цвет подсветки</label>
+    <select
+      id="color"
+      name="color"
+      [(ngModel)]="sentence.color"
+      (ngModelChange)="sentenceChanged()"
+    >
+      <option value="red">Красный</option>
+      <option value="yellow">Желтый</option>
+      <option value="green">Зеленый</option>
+    </select>
+  </form>
+</div>
